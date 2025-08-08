@@ -1,0 +1,4 @@
+# Don't commit node_modules or secrets
+node_modules/
+.env
+.DS_Store
