@@ -55,7 +55,7 @@ app.post("/api/cohere", async (req, res) => {
     const response = await fetch("https://api.cohere.ai/v1/generate", {
       method: "POST",
       headers: {
-        Authorization: Bearer ${process.env.COHERE_API_KEY},
+        Authorization: `Bearer ${process.env.COHERE_API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
@@ -82,7 +82,7 @@ app.post("/api/tts", async (req, res) => {
 
   try {
     const response = await fetch(
-      https://api.elevenlabs.io/v1/text-to-speech/${process.env.ELEVENLABS_VOICE_ID},
+      `https://api.elevenlabs.io/v1/text-to-speech/${process.env.ELEVENLABS_VOICE_ID}`,
       {
         method: "POST",
         headers: {
@@ -109,7 +109,7 @@ app.post("/api/tts", async (req, res) => {
   }
 });
 
-// Start server
+// ✅ Start the server
 app.listen(PORT, () => {
-  console.log(🚀 Server running at http://localhost:${PORT});
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
