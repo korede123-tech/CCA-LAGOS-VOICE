@@ -16,7 +16,6 @@ app.use(express.static("public"));
 
 /**
  * 🎙️ Transcription Endpoint
- * Receives a multipart/form-data request with a 'file' field (audio)
  */
 app.post("/api/transcribe", upload.single("file"), async (req, res) => {
   try {
@@ -109,7 +108,7 @@ app.post("/api/tts", async (req, res) => {
   }
 });
 
-// ✅ Start the server
+// ✅ Start the server (dynamic port for Render)
 app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
+  console.log(`🚀 Server running at http://localhost:${PORT} (or your Render URL in production)`);
 });
